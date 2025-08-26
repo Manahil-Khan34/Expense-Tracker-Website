@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { BASE_URL } from './apiPaths';
 
+
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
@@ -43,7 +44,7 @@ axiosInstance.interceptors.request.use(
         // Handle timeout error
         console.error('Request timed out. Please try again later.', error.message);
       }
-      return promis.reject(error);
+      return Promise.reject(error);
     }
     );
 
